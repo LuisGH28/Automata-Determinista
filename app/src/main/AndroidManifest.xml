@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Automatas">
         <activity
+            android:name=".ReadFile"
+            android:exported="false" />
+        <activity
             android:name=".FileUp"
             android:exported="false" />
         <activity

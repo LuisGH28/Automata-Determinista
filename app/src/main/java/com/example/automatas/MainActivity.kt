@@ -42,8 +42,13 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
                 val intent: Intent = Intent(this, FileUp::class.java)
                 startActivity(intent)
             }
-            R.id.nav_item_two -> Toast.makeText(this, "Item 2", Toast.LENGTH_LONG).show()
-            R.id.nav_item_three -> Toast.makeText(this, "Item 3", Toast.LENGTH_LONG).show()
+            R.id.nav_item_two -> {
+                val pTwo: Intent = Intent(this, ReadFile::class.java)
+                startActivity(pTwo)
+            }
+            R.id.nav_item_three -> {
+                Toast.makeText(this, "Item 3", Toast.LENGTH_LONG).show()
+            }
         }
         drawer.closeDrawer(GravityCompat.START)
         return true

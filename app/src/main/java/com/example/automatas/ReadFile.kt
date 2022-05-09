@@ -3,23 +3,19 @@ package com.example.automatas
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.EditText
 import java.io.BufferedReader
 import java.io.InputStreamReader
+import com.example.automatas.FileUp.Companion.Text
 import java.io.OutputStreamWriter
 
-class FileUp : AppCompatActivity() {
 
-    companion object{
-        var Text: EditText?=null
-    }
-
+class ReadFile : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_file_up)
+        setContentView(R.layout.activity_read_file)
 
-        Text=findViewById(R.id.txtText)
-        if(existFile(fileList(), "text.txt")){
+        Text=findViewById(R.id.txtTexts)
+        if(FileUp().existFile(fileList(), "text.txt")){
             var content=""
             val file= InputStreamReader(openFileInput("text.txt"))
             val bf= BufferedReader(file)
@@ -30,22 +26,5 @@ class FileUp : AppCompatActivity() {
             }
             Text?.setText(content)
         }
-        
-    }
-
-    fun save(view: View) {
-        val file= OutputStreamWriter(openFileOutput("text.txt", MODE_PRIVATE))
-        file.write(Text?.text.toString())
-        file.flush()
-        file.close()
-        finish()
-    }
-
-    fun existFile(files:Array<String>, file:String): Boolean {
-        files.forEach {
-            if (file == it)
-                return true
-        }
-        return false
     }
 }

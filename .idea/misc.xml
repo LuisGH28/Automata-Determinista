@@ -6,6 +6,7 @@
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_file_up.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_read_file.xml" value="0.1" />
         <entry key="app/src/main/res/layout/app_bar_main.xml" value="0.14221014492753623" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.14221014492753623" />
         <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.19479166666666667" />
