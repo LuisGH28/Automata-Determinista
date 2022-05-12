@@ -2,4 +2,9 @@
     <string name="app_name">Automatas</string>
     <string name="navigation_drawer_open">Open</string>
     <string name="navigation_drawer_close">Close</string>
+    <string name="estados">Estados</string>
+    <string name="alfabeto">Alfabeto</string>
+    <string name="generar_tabla">Generar Tabla</string>
+    <string name="cuantos_estados_existen">Cuantos Estados Existen</string>
+    <string name="escribe_el_alfabeto_del_automata">Escribe el Alfabeto del Automata</string>
 </resources>

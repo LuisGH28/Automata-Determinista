@@ -39,15 +39,20 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.nav_item_one -> {
-                val intent: Intent = Intent(this, FileUp::class.java)
+                val intent: Intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             }
             R.id.nav_item_two -> {
-                val pTwo: Intent = Intent(this, ReadFile::class.java)
+                val pTwo: Intent = Intent(this, WriteAutomata::class.java)
                 startActivity(pTwo)
             }
             R.id.nav_item_three -> {
-                Toast.makeText(this, "Item 3", Toast.LENGTH_LONG).show()
+                val pThree: Intent = Intent(this, FileUp::class.java)
+                startActivity(pThree)
+            }
+            R.id.nav_item_four -> {
+                val pFour: Intent = Intent(this, ReadFile::class.java)
+                startActivity(pFour)
             }
         }
         drawer.closeDrawer(GravityCompat.START)

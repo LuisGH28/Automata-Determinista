@@ -3,23 +3,15 @@
     <group>
         <item android:id="@+id/nav_item_one"
             android:icon="@drawable/abc_vector_test"
-            android:title="Subir Archivo"/>
+            android:title="Inicio"/>
         <item android:id="@+id/nav_item_two"
             android:icon="@drawable/abc_vector_test"
-            android:title="Leer Archivo"/>
+            android:title="Escribir Automata"/>
         <item android:id="@+id/nav_item_three"
             android:icon="@drawable/abc_vector_test"
-            android:title="Item 3"/>
+            android:title="Subir Automata"/>
+        <item android:id="@+id/nav_item_four"
+            android:icon="@drawable/abc_vector_test"
+            android:title="Leer Automanta"/>
     </group>
-
-    <item android:title="Title 1">
-        <menu>
-            <item android:id="@+id/nav_item_six"
-                android:icon="@drawable/abc_vector_test"
-                android:title="Item 6"/>
-            <item android:id="@+id/nav_item_seven"
-                android:icon="@drawable/abc_vector_test"
-                android:title="Item 7"/>
-        </menu>
-    </item>
 </menu>
