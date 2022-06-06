@@ -1,13 +1,18 @@
 package com.example.automatas
 
+import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.DocumentsContract
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.content.FileProvider
 import kotlinx.android.synthetic.main.activity_file_up.*
 import java.io.BufferedReader
 import java.io.InputStreamReader
@@ -17,6 +22,7 @@ class FileUp : AppCompatActivity() {
 
     companion object{
         var Text: EditText?=null
+        const val PICK_PDF_FILE = 2
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,14 +45,16 @@ class FileUp : AppCompatActivity() {
 
     }
 
-    private fun checkPermission(){
-        if(ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
+    private fun checkPermission() =
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
             //No aceptado
             requestFilePermission()
         }else{
             openFile()
+            openFiles(Uri.fromFile(filesDir))
         }
-    }
+
+
 
     private fun openFile() {
         Toast.makeText(this, "Abriendo almacenamiento", Toast.LENGTH_LONG).show()
@@ -89,5 +97,18 @@ class FileUp : AppCompatActivity() {
                 return true
         }
         return false
+    }
+
+    private fun openFiles(pickerInitialUri: Uri) {
+        val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+            addCategory(Intent.CATEGORY_OPENABLE)
+            type = "application/pdf"
+
+            // Optionally, specify a URI for the file that should appear in the
+            // system file picker when it loads.
+            putExtra(DocumentsContract.EXTRA_INITIAL_URI, pickerInitialUri)
+        }
+
+        startActivityForResult(intent, PICK_PDF_FILE)
     }
 }
